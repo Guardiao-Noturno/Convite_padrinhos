@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite de Casamento</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#001f6b,#4169E1,#0033cc);
+background-size:400% 400%;
+animation:fundoAnimado 12s ease infinite;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+color:#333;
+}
+
+/* FUNDO ANIMADO */
+
+@keyframes fundoAnimado{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ENVELOPE */
+
+#envelope{
+width:300px;
+height:190px;
+background:linear-gradient(135deg,#ffffff,#e6e6e6);
+border:3px solid #d4af37;
+border-radius:8px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+position:relative;
+font-weight:bold;
+perspective:800px;
+}
+
+/* TEXTO ABRIR */
+
+#textoClique{
+position:absolute;
+top:35px;
+width:100%;
+text-align:center;
+z-index:5;
+color:#4169E1;
+font-size:16px;
+}
+
+/* TAMPA */
+
+#tampa{
+position:absolute;
+top:0;
+left:0;
+width:97%;
+height:100%;
+background:#ffffff;
+border:4px solid #d4af37;
+clip-path: polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+transition:1s;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* LOGO */
+
+#logo{
+font-size:28px;
+font-family:'Great Vibes',cursive;
+color:#d4af37;
+margin-top:-50px;
+}
+
+/* ABRIR TAMPA */
+
+#envelope:hover #tampa{
+transform:rotateX(180deg);
+}
+
+/* CONVITE */
+
+#convite{
+display:none;
+background:linear-gradient(135deg,#ffffff,#f9f9f9);
+padding:35px;
+border-radius:20px;
+max-width:420px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+border:4px solid #d4af37;
+animation:aparecer 1s;
+}
+
+@keyframes aparecer{
+from{opacity:0;transform:scale(0.6);}
+to{opacity:1;transform:scale(1);}
+}
+
+/* NOMES */
+
+h1{
+font-family:'Great Vibes',cursive;
+color:#b8962e;
+font-size:42px;
+margin:10px 0;
+}
+
+/* ALIANÇAS */
+
+.alianca{
+font-size:42px;
+color:#d4af37;
+text-shadow:0 0 8px gold;
+animation:girar 6s linear infinite;
+margin-bottom:10px;
+}
+
+@keyframes girar{
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
+}
+
+/* DATA */
+
+.data{
+font-size:17px;
+font-weight:bold;
+color:#b8962e;
+margin-top:10px;
+}
+
+/* TEXTO */
+
+p{
+font-size:15px;
+}
+
+/* PERGUNTA */
+
+#pergunta{
+font-size:20px;
+color:#001f6b;
+}
+
+/* BOTÕES */
+
+.botao{
+margin-top:15px;
+display:inline-block;
+padding:12px 22px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+font-size:14px;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.local{
+background:#e74c3c;
+}
+
+.botao:hover{
+transform:scale(1.1);
+}
+
+/* CONTADOR */
+
+#contador{
+margin-top:15px;
+font-size:16px;
+font-weight:bold;
+color:#444;
+}
+
+/* PÉTALAS */
+
+.flor{
+position:absolute;
+font-size:26px;
+animation:cair linear infinite;
+opacity:0.9;
+}
+
+@keyframes cair{
+0%{transform:translateY(-50px) rotate(0);}
+100%{transform:translateY(100vh) rotate(360deg);}
+}
+
+/* ESTRELAS */
+
+.estrela{
+position:absolute;
+color:white;
+font-size:18px;
+opacity:0.8;
+animation:brilhar 2s infinite alternate;
+}
+
+@keyframes brilhar{
+0%{transform:scale(0.6);opacity:0.3;}
+100%{transform:scale(1.4);opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div id="envelope" onclick="abrir()">
+
+<div id="tampa">
+<div id="logo">T & J</div>
+</div>
+
+<div id="textoClique">Clique para abrir 💌</div>
+
+</div>
+
+<div id="convite">
+
+<div class="alianca">○○</div>
+
+<h1>
+Jean Carlos<br>
+&<br>
+Tauane Alves
+</h1>
+
+<div class="data">
+03 de Outubro de 2026 • 11:00
+</div>
+
+<p>
+Com muito carinho convidamos você para fazer parte
+de um dos momentos mais importantes de nossas vidas.
+</p>
+
+<h2 id="pergunta">
+Você aceita ser nossa testemunha?
+</h2>
+
+<p>
+Sua presença tornará este momento ainda mais especial ❤️
+</p>
+
+<p>
+📍Acontecera na Igreja São Raimundo Nonato<br>
+Sétima Travessa do 5 – Jardim Aeroporto<br>
+Itaituba – PA
+</p>
+
+<div id="contador"></div>
+
+<br>
+
+<a class="botao whatsapp"
+href="https://wa.me/93991864369?text=Aceito%20ser%20sua%20testemunha!"
+target="_blank">
+Confirmar no WhatsApp
+</a>
+
+<br>
+
+<a class="botao local"
+href="https://www.google.com/maps/search/?api=1&query=Igreja+São+Raimundo+Nonato+Paróquia+Santa+Teresinha+Itaituba+PA"
+target="_blank">
+Ver Local do Casamento 📍
+</a>
+
+</div>
+
+<script>
+
+function abrir(){
+
+document.getElementById("envelope").style.display="none";
+document.getElementById("convite").style.display="block";
+
+let musica = document.getElementById("musica");
+musica.volume = 0.6;
+musica.play();
+
+}
+
+/* PÉTALAS */
+
+let simbolos=["🌹","🌸","❤️"];
+
+for(let i=0;i<35;i++){
+
+let flor=document.createElement("div");
+
+flor.className="flor";
+flor.innerHTML=simbolos[Math.floor(Math.random()*simbolos.length)];
+
+flor.style.left=Math.random()*100+"%";
+flor.style.animationDuration=(6+Math.random()*6)+"s";
+
+document.body.appendChild(flor);
+
+}
+
+/* PERSONALIZAR NOME */
+
+const params = new URLSearchParams(window.location.search);
+const nome = params.get("nome");
+
+if(nome){
+
+document.getElementById("pergunta").innerHTML =
+nome + ", você aceita ser nosso padrinho?";
+
+}
+
+/* CONTADOR */
+
+let dataCasamento = new Date("oct 03, 2026 11:00:00").getTime();
+
+setInterval(function(){
+
+let agora = new Date().getTime();
+
+let distancia = dataCasamento - agora;
+
+let dias = Math.floor(distancia / (1000*60*60*24));
+let horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("contador").innerHTML =
+"Faltam " + dias + " dias e " + horas + " horas para o casamento 💒";
+
+},1000);
+
+/* ESTRELAS */
+
+for(let i=0;i<40;i++){
+let estrela=document.createElement("div");
+estrela.className="estrela";
+estrela.innerHTML="✨";
+estrela.style.left=Math.random()*100+"%";
+estrela.style.top=Math.random()*100+"%";
+document.body.appendChild(estrela);
+}
+
+</script>
+
+</body>
+</html>
