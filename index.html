@@ -15,7 +15,7 @@ font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#001f6b,#4169E1,#0033cc);
 background-size:400% 400%;
 animation:fundoAnimado 12s ease infinite;
-height:100vh;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -222,7 +222,135 @@ animation:brilhar 2s infinite alternate;
 0%{transform:scale(0.6);opacity:0.3;}
 100%{transform:scale(1.4);opacity:1;}
 }
+/* =========================
+   RESPONSIVIDADE
+========================= */
 
+@media (max-width:768px){
+
+body{
+padding:15px;
+min-height:100vh;
+height:auto;
+overflow-x:hidden;
+}
+
+/* ENVELOPE */
+
+#envelope{
+width:90%;
+max-width:320px;
+height:180px;
+}
+
+/* TEXTO ABRIR */
+
+#textoClique{
+font-size:14px;
+top:28px;
+padding:0 10px;
+box-sizing:border-box;
+}
+
+/* LOGO */
+
+#logo{
+font-size:24px;
+}
+
+/* CONVITE */
+
+#convite{
+width:90%;
+max-width:420px;
+padding:25px 18px;
+box-sizing:border-box;
+border-radius:16px;
+}
+
+/* NOMES */
+
+h1{
+font-size:34px;
+line-height:1.2;
+}
+
+/* ALIANÇAS */
+
+.alianca{
+font-size:34px;
+}
+
+/* DATA */
+
+.data{
+font-size:15px;
+}
+
+/* TEXTOS */
+
+p{
+font-size:14px;
+line-height:1.6;
+}
+
+/* PERGUNTA */
+
+#pergunta{
+font-size:18px;
+line-height:1.4;
+}
+
+/* BOTÕES */
+
+.botao{
+display:block;
+width:100%;
+box-sizing:border-box;
+padding:14px;
+font-size:14px;
+margin-top:12px;
+}
+
+/* CONTADOR */
+
+#contador{
+font-size:14px;
+line-height:1.5;
+}
+
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width:400px){
+
+h1{
+font-size:28px;
+}
+
+#pergunta{
+font-size:16px;
+}
+
+p{
+font-size:13px;
+}
+
+.data{
+font-size:14px;
+}
+
+.botao{
+font-size:13px;
+padding:12px;
+}
+
+#textoClique{
+font-size:13px;
+}
+
+}
 </style>
 </head>
 
@@ -262,7 +390,7 @@ de um dos momentos mais importantes de nossas vidas.
 </p>
 
 <h2 id="pergunta">
-Você aceita ser nossa testemunha?
+  Você aceita ser nosso Padrinho? / Madrinha ?
 </h2>
 
 <p>
@@ -280,7 +408,7 @@ Itaituba – PA
 <br>
 
 <a class="botao whatsapp"
-href="https://wa.me/93991864369?text=Aceito%20ser%20sua%20testemunha!"
+href="https://wa.me/93991864369?text=Aceito%20Ser%20Seu%20Padrinho/%20Madrinha!"
 target="_blank">
 Confirmar no WhatsApp
 </a>
